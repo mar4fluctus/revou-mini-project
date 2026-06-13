@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Life Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <header class="section item-greeting">
+            <h1 id="time">00:00:00</h1>
+            <p id="date-display" style="margin: 5px 0; color: #666; font-size: 0.95rem;">Date</p>
+            <h2 id="greeting">Good Morning, <span id="user-name" contenteditable="true">Creator!</span></h2>
+        </header>
+
+        <section class="section item-timer">
+            <h3>Focus Timer</h3>
+            <div id="timer-display">25:00</div>
+            <div class="timer-controls">
+                <button id="btn-start" class="btn-primary">Start</button>
+                <button id="btn-stop" class="btn-secondary">Stop</button>
+                <button id="btn-reset" class="btn-secondary">Reset</button>
+            </div>
+        </section>
+
+        <section class="section item-todo">
+            <h3>Tasks</h3>
+            <div class="input-group">
+                <input type="text" id="todo-input" placeholder="Add a new task...">
+                <button id="btn-add" class="btn-primary">Add</button>
+            </div>
+            
+            <div class="todo-controls">
+                <button id="btn-sort" class="btn-outline">Sort: Uncompleted First</button>
+            </div>
+
+            <ul id="todo-list"></ul>
+        </section>
+
+        <section class="section item-links">
+            <h3>Quick Links</h3>
+            <div class="input-group link-inputs">
+                <input type="text" id="link-name-input" placeholder="Link name">
+                <input type="text" id="link-url-input" placeholder="URL (e.g., https://...)">
+                <button id="btn-add-link" class="btn-primary">Add Link</button>
+            </div>
+            <div id="links-container">
+                </div>
+        </section>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

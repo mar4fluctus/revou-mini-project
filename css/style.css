@@ -1,0 +1,162 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --primary-color: #5b82d7;
+    --danger-color: #e57373;
+    --secondary-color: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    margin: 0;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 950px;
+    width: 100%;
+}
+
+.section {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.item-greeting {
+    grid-column: span 2;
+    text-align: center;
+}
+
+h1 { font-size: 3.5rem; margin: 0; color: #4a5568; }
+h3 { margin-top: 0; margin-bottom: 15px; color: #4a4a4a; font-size: 1.2rem; }
+
+#timer-display { 
+    font-size: 4rem; 
+    font-weight: bold; 
+    margin: 20px 0; 
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.timer-controls, .todo-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.link-inputs input {
+    flex: 1;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    outline: none;
+    width: 100%;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+}
+
+/* BUTTON STYLES */
+button {
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+button:hover { opacity: 0.9; }
+
+.btn-primary { background-color: var(--primary-color); color: white; }
+.btn-secondary { background-color: var(--secondary-color); color: #333; }
+.btn-danger { background-color: var(--danger-color); color: white; padding: 6px 12px; font-size: 0.85rem; }
+.btn-outline { background-color: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); width: 100%; }
+
+/* TASKS LIST */
+ul { list-style: none; padding: 0; margin: 0; }
+li { 
+    margin: 12px 0; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.checked { text-decoration: line-through; color: #a0aec0; }
+
+/* QUICK LINKS STYLES */
+#links-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.link-btn-wrapper {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.link-btn-wrapper a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.btn-del-link {
+    background: rgba(0, 0, 0, 0.15);
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+.btn-del-link:hover { background: rgba(2db, 0, 0, 0.4); }
+
+/* Responsive Grid untuk Layar Kecil */
+@media (max-width: 768px) {
+    .dashboard-container { grid-template-columns: 1fr; }
+    .item-greeting { grid-column: span 1; }
+}
